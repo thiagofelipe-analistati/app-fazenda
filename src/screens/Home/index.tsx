@@ -1,31 +1,61 @@
-import React from 'react'
-import { Text, Image, SafeAreaView, TouchableOpacity} from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { Text, Image, SafeAreaView, View} from 'react-native'
 import {styles} from './styles'
-import Bemvindo from '../../assets/bemvindo.png'
-import {Feather} from '@expo/vector-icons'
-import { useNavigation } from '@react-navigation/core'
-
-export function Home (){
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/core';
+import RebanhoPng from '../../assets/rebanho.png';
+import AvantePng from '../../assets/avante.png';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { AntDesign } from '@expo/vector-icons'; 
+import colors from '../../styles/colors';
+export function Home (): JSX.Element{
     const navigation = useNavigation();
     function handleStart (){
-        
+        navigation.navigate('');
     }
+    const [userName, setUserName] = useState('');
+
+    useEffect(()=>{
+        async function loadStorageUserName() {
+            const user = await AsyncStorage.getItem('@plantmanager:user');
+            setUserName(user || '');
+        }
+        loadStorageUserName();
+    },[])
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>
-                Gerencie {'\n'}sua fazenda de{'\n'} forma fácil
-            </Text>
-            <Image source={Bemvindo} style={styles.image} />
-            <Text style={styles.subtitle}>
-            Gestão pecuária e financeira  {'\n'} em um único lugar.
-            </Text >
-            <TouchableOpacity 
-            style={styles.button} 
-            activeOpacity={0.7}
-            onPress={handleStart}
-            >
-                <Feather style={styles.textbutton} name="chevron-right" /> 
-            </TouchableOpacity>
+            <View style={styles.header}>
+            <View >
+                <Text style={styles.greeting}> Olá,</Text>
+                <Text style={styles.usernaem}>{userName} </Text>
+            </View>
+            <View style={styles.ali}>
+                <Text style={styles.saldo}> Saldo atual</Text>
+                <Text style={styles.saldo}>R$ 0,00</Text>
+            </View>
+            </View>
+            <Text style={styles.fazenda}> Bem vindo a Fazenda São José </Text>
+            <View style={styles.body}>
+                <View style={styles.bodyrebanho}> 
+                    <Image source={RebanhoPng} style={styles.rebanho} />
+                    <View style={styles.ali} >
+                        <Text style={styles.titlerebanho} > Rebanho </Text>
+                        <Text style={styles.titlerebanho}> 70 </Text>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.gestao}>
+                <View style={styles.gestaobutton}> 
+                    <Text style={styles.textbutton} > Gestão finaceira </Text>
+                    <TouchableOpacity 
+                        activeOpacity={0.7}
+                        onPress={handleStart}
+                    >
+                    <AntDesign name="caretright" size={35} color={colors.green}/>
+                    </TouchableOpacity> 
+                </View>              
+            </View>
+
         </SafeAreaView>
     );
 }
