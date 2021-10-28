@@ -20,7 +20,7 @@ export function UserIdentification({}){
     return Alert.alert( "Me diz como chamar você? ");
     try{
       await AsyncStorage.setItem('@plantmanager:user', name ); 
-      navigation.navigate('Home');
+      navigation.navigate('Tab');
     }catch{
       return Alert.alert( "Não foi possível salvar seu nome");
     }

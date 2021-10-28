@@ -4,6 +4,7 @@ import {  Welcome } from '../screens/Welcome';
 import TabRoutes from './tab.routes';
 import { UserIdentification } from '../screens/UserIdentification';
 import { Home } from '../screens/Home';
+import { Cadastrar } from '../screens/Cadastrar';
 
 
 const {Navigator, Screen} = createStackNavigator();
@@ -21,8 +22,11 @@ export function AuthRoutes(){
            <Screen name="UserIdentification"
             component={UserIdentification } 
           />
-          <Screen name="Home"
-            component={Home } 
+          <Screen name="Tab"
+            component={TabRoutes} 
+          />
+          <Screen name="Cadastrar"
+            component={Cadastrar} 
           />
 
       </Navigator>
