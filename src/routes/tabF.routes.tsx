@@ -4,14 +4,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import colors from '../styles/colors';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Vender } from '../screens/Vender';
-import { Cadastrar } from '../screens/Cadastrar';
-import { Home } from '../screens/Home';
+import { Financeiro } from '../screens/Financeiro';
+import { Receita } from '../screens/Receita';
+import { Despesa } from '../screens/Despesa';
 
 
 const AppTab = createBottomTabNavigator();
 
-const TabRoutes = () => {
+const TabRoutesF = () => {
     return(
         <AppTab.Navigator
         screenOptions={{
@@ -22,8 +22,8 @@ const TabRoutes = () => {
           }} >
                 
                  <AppTab.Screen
-                    name='Home'
-                    component={Home}
+                    name='Financeiro'
+                    component={Financeiro}
                     options={{
                         tabBarIcon: (({ size, color }) => (
                             <MaterialIcons
@@ -35,8 +35,8 @@ const TabRoutes = () => {
                     }}
                 />
                  <AppTab.Screen
-                    name="Vender"
-                    component={Vender}
+                    name="Despesa"
+                    component={Despesa}
                     options={{
                         tabBarIcon: (({ size, color }) => (
                             <MaterialIcons
@@ -49,8 +49,8 @@ const TabRoutes = () => {
                 />
 
                 <AppTab.Screen
-                    name="Cadastrar"
-                    component={Cadastrar}
+                    name="Receita"
+                    component={Receita}
                     options={{
                         tabBarIcon: (({ size, color }) => (
                             <MaterialIcons
@@ -65,4 +65,4 @@ const TabRoutes = () => {
     )
 }
 
-export default TabRoutes;
+export default TabRoutesF;

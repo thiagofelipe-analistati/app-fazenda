@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Text, SafeAreaView, View, TextInput, TouchableOpacity} from 'react-native'
+import { Text, Image, SafeAreaView, View, TextInput, TouchableOpacity} from 'react-native'
 import {styles} from './styles'
 import { useNavigation } from '@react-navigation/core';
 import { Button } from '../../componets/Button';
 import { AntDesign } from '@expo/vector-icons'; 
 import colors from '../../styles/colors';
 
-export function Vender(): JSX.Element{
+export function Despesa(): JSX.Element{
     const navigation = useNavigation();
     function handleStart (){
         navigation.navigate('');
@@ -15,19 +15,9 @@ export function Vender(): JSX.Element{
         <SafeAreaView style={styles.container}>
               
               <Text style={styles.title}>
-                Vender Animal
+                Nova Despesa
               </Text>
               <View style={styles.imputform}> 
-                <View style={styles.gestao}>
-                  <TouchableOpacity 
-                      activeOpacity={0.7}
-                      onPress={handleStart}
-                      style={styles.gestaobutton}
-                  >
-                      <Text style={styles.textbutton} > Selecionar </Text>
-                      <AntDesign name="caretright" size={35} color={colors.green}/>
-                  </TouchableOpacity>      
-                </View>
                   <TextInput 
                  style={[styles.imput, {marginBottom: 12}]}
                   placeholder="Data"

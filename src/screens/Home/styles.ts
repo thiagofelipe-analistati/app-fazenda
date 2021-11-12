@@ -70,8 +70,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 50,
-        flex: 1
+        paddingHorizontal: 40,
+        marginTop: 15
     },
     rebanho:{
         width: 110,

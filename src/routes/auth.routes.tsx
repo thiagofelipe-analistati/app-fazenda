@@ -3,10 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {  Welcome } from '../screens/Welcome';
 import TabRoutes from './tab.routes';
 import { UserIdentification } from '../screens/UserIdentification';
-import { Home } from '../screens/Home';
-import { Cadastrar } from '../screens/Cadastrar';
-
-
+import { Financeiro } from '../screens/Financeiro';
+import TabRoutesF from './tabF.routes';
+import { Rebanho } from '../screens/Rebanho';
 const {Navigator, Screen} = createStackNavigator();
 
 export function AuthRoutes(){
@@ -25,8 +24,14 @@ export function AuthRoutes(){
           <Screen name="Tab"
             component={TabRoutes} 
           />
-          <Screen name="Cadastrar"
-            component={Cadastrar} 
+           <Screen name="TabF"
+            component={TabRoutesF} 
+          />
+          <Screen name="Financeiro"
+            component={Financeiro} 
+          />
+          <Screen name="Rebanho"
+            component={Rebanho} 
           />
 
       </Navigator>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Text, Image, SafeAreaView, View, TextInput} from 'react-native'
 import {styles} from './styles'
 import { useNavigation } from '@react-navigation/core';
-import RebanhoPng from '../../assets/rebanho.png';
 import { Button } from '../../componets/Button';
 
 export function Cadastrar(): JSX.Element{

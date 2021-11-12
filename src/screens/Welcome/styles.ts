@@ -29,7 +29,6 @@ export const styles = StyleSheet.create({
     image : {
         height: Dimensions.get('window').width*0.7,
         width:370,
-        
     },
     button :{
         width: '75%',

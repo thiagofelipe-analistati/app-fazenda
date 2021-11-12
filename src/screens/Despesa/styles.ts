@@ -33,21 +33,16 @@ export const styles = StyleSheet.create({
     button :{
         width: '85%',
         marginTop: 55,
-    },    
-    gestao: {
-        width: '100%',
-        height: 53,
-        backgroundColor: colors.shape,
-        borderRadius: 20,
-        marginBottom: 10
     },
     gestaobutton: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 80,
-        marginTop: 8,
-        marginLeft: 50
+        justifyContent: 'space-between',
+        paddingHorizontal: 100,
+        height: 53,
+        backgroundColor: colors.shape,
+        marginBottom: 10,
+        borderRadius: 20
     },
     textbutton: {
         textAlign: 'center',

@@ -4,14 +4,16 @@ import {styles} from './styles'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/core';
 import RebanhoPng from '../../assets/rebanho.png';
-import AvantePng from '../../assets/avante.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons'; 
 import colors from '../../styles/colors';
 export function Home (): JSX.Element{
     const navigation = useNavigation();
     function handleStart (){
-        navigation.navigate('');
+        navigation.navigate('TabF');
+    }
+    function handleRebanho (){
+        navigation.navigate('Rebanho');
     }
     const [userName, setUserName] = useState('');
 
@@ -36,6 +38,11 @@ export function Home (): JSX.Element{
             </View>
             <Text style={styles.fazenda}> Bem vindo a Fazenda São José </Text>
             <View style={styles.body}>
+                <TouchableOpacity 
+                        activeOpacity={0.7}
+                        onPress={handleRebanho}
+                        
+                    >
                 <View style={styles.bodyrebanho}> 
                     <Image source={RebanhoPng} style={styles.rebanho} />
                     <View style={styles.ali} >
@@ -43,17 +50,17 @@ export function Home (): JSX.Element{
                         <Text style={styles.titlerebanho}> 70 </Text>
                     </View>
                 </View>
+                </TouchableOpacity>
             </View>
             <View style={styles.gestao}>
-                <View style={styles.gestaobutton}> 
+                <TouchableOpacity 
+                    activeOpacity={0.7}
+                    onPress={handleStart}
+                    style={styles.gestaobutton}
+                >
                     <Text style={styles.textbutton} > Gestão finaceira </Text>
-                    <TouchableOpacity 
-                        activeOpacity={0.7}
-                        onPress={handleStart}
-                    >
                     <AntDesign name="caretright" size={35} color={colors.green}/>
-                    </TouchableOpacity> 
-                </View>              
+                </TouchableOpacity>      
             </View>
 
         </SafeAreaView>
