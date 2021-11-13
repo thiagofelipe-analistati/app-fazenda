@@ -6,6 +6,8 @@ import { UserIdentification } from '../screens/UserIdentification';
 import { Financeiro } from '../screens/Financeiro';
 import TabRoutesF from './tabF.routes';
 import { Rebanho } from '../screens/Rebanho';
+import { Matrizes } from '../screens/Rebanho/Matrizes';
+import { Reprodutores } from '../screens/Rebanho/Reprodutores';
 const {Navigator, Screen} = createStackNavigator();
 
 export function AuthRoutes(){
@@ -33,6 +35,13 @@ export function AuthRoutes(){
           <Screen name="Rebanho"
             component={Rebanho} 
           />
+           <Screen name="Matrizes"
+            component={Matrizes} 
+          />
+            <Screen name="Reprodutores"
+            component={Reprodutores} 
+          />
+
 
       </Navigator>
     )
