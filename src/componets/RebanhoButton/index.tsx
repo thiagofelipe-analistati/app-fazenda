@@ -20,7 +20,10 @@ export function RebanhoButton({identificacao,title, dataNascimento, proprietario
         <RectButton style={styles.container} {...rest}>
           <Text style={styles.textid}>{identificacao}</Text>
           <Text style={styles.texttitle}> {title} </Text>
-          <Text style={styles.texttitle}> {proprietarios.name} </Text>
+          <View style={styles.alinhar}>
+            <Text style={styles.textPropritario} > Proprietário </Text>
+            <Text style={styles.texttitle}> {proprietarios.name} </Text>
+          </View>
         </RectButton>
     );
 }

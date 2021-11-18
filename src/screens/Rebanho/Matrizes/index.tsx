@@ -5,6 +5,7 @@ import {styles} from './styles'
 import { useNavigation } from '@react-navigation/core';
 import api from '../../../service/api';
 import { RebanhoButton } from '../../../componets/RebanhoButton';
+import {Load} from '../../../componets/Load'
 
 
 interface MatrizesProps {
@@ -18,6 +19,7 @@ interface MatrizesProps {
 }
 export function Matrizes(): JSX.Element{
   const[matrizes, setMatrizes] = useState<MatrizesProps[]>([]);
+  const [loading, setLoading] = useState(true);
     const navigation = useNavigation();
 
     function handleStart (){
@@ -25,16 +27,16 @@ export function Matrizes(): JSX.Element{
     }
 
     useEffect (()=> {
-
       async function fetchDados() {
         const {data} = await api.get('matrizes');
         setMatrizes(data);
-        console.log(data);
+        setLoading(false);
       }
-
       fetchDados();
     },[])
-
+    if(loading){
+      return <Load />
+    }
     return (
         <View style={styles.container}>
               <View style={styles.header}>
@@ -48,7 +50,6 @@ export function Matrizes(): JSX.Element{
                   style={styles.button}
                   renderItem={({item})=>(
                    <RebanhoButton 
-
                    identificacao={item.identificacao} 
                    title="Matriz" 
                    dataNascimento={item.dataNascimento}

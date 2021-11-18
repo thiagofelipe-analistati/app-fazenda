@@ -1,47 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { Text, Image, SafeAreaView, View, TextInput} from 'react-native'
+import { Text, Image, SafeAreaView, View, TextInput, TouchableOpacity} from 'react-native'
 import {styles} from './styles'
 import { useNavigation } from '@react-navigation/core';
-import { Button } from '../../componets/Button';
 
 export function Cadastrar(): JSX.Element{
     const navigation = useNavigation();
-    function handleStart (){
-        navigation.navigate('');
+    function handleMatrizes (){
+        navigation.navigate('CadastrarMatriz');
+    }
+    function handleReprodutores (){
+      navigation.navigate('CadastrarReprodutor');
+    }
+    function handleNascimenoto(){
+      navigation.navigate('CadastrarNascimento');
     }
     return (
         <SafeAreaView style={styles.container}>
-              
-              <Text style={styles.title}>
-                Novo Animal
-              </Text>
-              <View style={styles.imputform}> 
-                <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Identificação"
-                />
-                  <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Sexo"
-                />
-                  <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Data de nascimento"
-                />
-                  <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Proprietário"
-                />
-                 <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Identificação da matriz"
-                />
-                </View>
-                <View style={styles.button}>
-                    <Button title="Confirma" onPress={handleStart}/>
-                </View>
-
-            
+              <View style={styles.header}>
+                <Text style={styles.title}>
+                  Cadastrar Rebanho
+                </Text>
+              </View>
+              <TouchableOpacity style={styles.button} onPress={handleMatrizes}>
+                <Text style={styles.texttitle}> Matrizes </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button} onPress={handleNascimenoto} >
+                <Text style={styles.texttitle}>Nascimento</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button} onPress={handleReprodutores}>
+                <Text style={styles.texttitle}> Reprodutores </Text>
+              </TouchableOpacity>
         </SafeAreaView>
     );
 }

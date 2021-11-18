@@ -6,14 +6,12 @@ import { useNavigation } from '@react-navigation/core';
 
 export function Rebanho(): JSX.Element{
     const navigation = useNavigation();
-  
     function handleMatrizes (){
         navigation.navigate('Matrizes');
     }
     function handleReprodutores (){
       navigation.navigate('Reprodutores');
   }
-
     return (
         <SafeAreaView style={styles.container}>
               <View style={styles.header}>

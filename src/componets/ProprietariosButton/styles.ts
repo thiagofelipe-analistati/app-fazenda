@@ -1,21 +1,20 @@
 import React from "react";
 
-import { Dimensions, StyleSheet } from "react-native";
+import {  StyleSheet } from "react-native";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 
-import { getStatusBarHeight} from 'react-native-iphone-x-helper'
-
 export const styles = StyleSheet.create({
     container: {
-        height: 85,
+        width:"100%",
+        alignItems: 'center',
+        justifyContent:"space-between",
+        height: 70,
         backgroundColor: colors.shape,
         marginTop: 8,
         borderRadius: 20,
         flexDirection: 'row',
-        justifyContent: 'space-between',  
-        alignItems: 'center',
-        paddingHorizontal: 50,
+        paddingHorizontal: 100
     },
     texttitle :{
         fontFamily: fonts.heading,
@@ -29,12 +28,5 @@ export const styles = StyleSheet.create({
     },
     alinhar:{
        alignItems: 'center'
-    },
-    textPropritario: {
-        alignItems: 'center',
-        fontFamily: fonts.heading,
-        color :colors.green,
-        fontSize: 17,
     }
- 
 });

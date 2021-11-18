@@ -8,6 +8,9 @@ import TabRoutesF from './tabF.routes';
 import { Rebanho } from '../screens/Rebanho';
 import { Matrizes } from '../screens/Rebanho/Matrizes';
 import { Reprodutores } from '../screens/Rebanho/Reprodutores';
+import { CadastrarMatriz } from '../screens/Cadastrar/CadastrarMatriz';
+import { CadastrarNascimento } from '../screens/Cadastrar/CadastrarNascimento';
+import { CadastrarReprodutor } from '../screens/Cadastrar/CadastrarReprodutor';
 const {Navigator, Screen} = createStackNavigator();
 
 export function AuthRoutes(){
@@ -41,8 +44,15 @@ export function AuthRoutes(){
             <Screen name="Reprodutores"
             component={Reprodutores} 
           />
-
-
+           <Screen name="CadastrarMatriz"
+            component={CadastrarMatriz} 
+          />
+          <Screen name="CadastrarNascimento"
+            component={CadastrarNascimento} 
+          />
+          <Screen name="CadastrarReprodutor"
+            component={CadastrarReprodutor} 
+          />
       </Navigator>
     )
 

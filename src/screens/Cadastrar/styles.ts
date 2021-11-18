@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 
@@ -13,27 +13,33 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: getStatusBarHeight(),
     },
+    header: {
+        marginTop: 40,
+        alignItems: 'center',
+        marginBottom: 50,
+    },
     title: {
         fontFamily: fonts.heading,
         fontSize: 32,
-        color: colors.green,
-       marginTop: 50
-
-
+        color: colors.green
     },
-    imputform :{
-        marginTop: 60,
-        width: '85%'
-    },
-    imput: {
-        height: 53,
-        textAlign: 'center',
-        fontSize: 17,  
+    button: {
+        width: '90%',
+        height: 80,
         backgroundColor: colors.shape,
-        color: colors.body,
+        marginTop: 8,
+        borderRadius: 20,         
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    button :{
-        width: '85%',
-        marginTop: 55,
+    texttitle :{
+        fontFamily: fonts.heading,
+        color : colors.body,
+        fontSize: 17,
+    },
+    textbody:{
+        fontFamily: fonts.text,
+        color : colors.body_light,
+        fontSize: 13,
     }
 });

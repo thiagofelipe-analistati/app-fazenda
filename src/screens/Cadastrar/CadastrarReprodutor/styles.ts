@@ -1,8 +1,8 @@
 import React from "react";
 
 import { StyleSheet } from "react-native";
-import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
+import colors from "../../../styles/colors";
+import fonts from "../../../styles/fonts";
 
 import { getStatusBarHeight} from 'react-native-iphone-x-helper'
 
@@ -17,36 +17,48 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         fontSize: 32,
         color: colors.green,
-        marginTop: 50
     },
     imputform :{
-        marginTop: 60,
+        marginTop: 40,
         width: '85%'
     },
     imput: {
-        height: 53,
+        height: 60,
         textAlign: 'center',
         fontSize: 17,  
         backgroundColor: colors.shape,
         color: colors.body,
+    },
+    select:{
+        height: 60,
+        backgroundColor: colors.shape,
+        borderRadius: 20,
+        flexDirection:'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal:20,
+        
+    },
+    selectText:{
+        fontSize: 17,
+        color: colors.green,
+        marginLeft:65
     },
     button :{
         width: '85%',
         marginTop: 55,
     },
-    gestaobutton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingHorizontal: 100,
-        height: 53,
-        backgroundColor: colors.shape,
-        marginBottom: 10,
-        borderRadius: 20
+    buttonModal: {
+        width: '90%',
+        marginTop: 10,
+        borderRadius: 20,
     },
-    textbutton: {
-        textAlign: 'center',
-        fontSize: 17,  
-        color: colors.body,
+    header: {
+        marginTop: 40,
+        alignItems: 'center',
+    },
+    rebanho:{
+        width: 110,
+        height: 87,
     }
 });

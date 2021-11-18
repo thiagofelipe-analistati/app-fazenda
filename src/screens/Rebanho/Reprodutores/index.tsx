@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Text, Image, SafeAreaView, View, TextInput, TouchableOpacity, FlatList} from 'react-native'
-import VacaPng from '../../../assets/vaca.png';
+import BoiPng from '../../../assets/boi.png';
 import {styles} from './styles'
 import { useNavigation } from '@react-navigation/core';
 import api from '../../../service/api';
@@ -26,7 +26,7 @@ export function Reprodutores(): JSX.Element{
     useEffect (()=> {
 
       async function fetchDados() {
-        const {data} = await api.get('Reprodutores');
+        const {data} = await api.get('reprodutores');
         setMatrizes(data);
         console.log(data);
       }
@@ -37,7 +37,7 @@ export function Reprodutores(): JSX.Element{
     return (
         <View style={styles.container}>
               <View style={styles.header}>
-                <Image source={VacaPng} style={styles.rebanho} />
+              <Image source={BoiPng} style={styles.rebanho} />
                 <Text style={styles.title}>
                 Reprodutores
                 </Text>
