@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, Text, View} from 'react-native'
 import {styles} from './styles'
-import { ProprietariosButton, ProprietariosButtonProps } from '../ProprietariosButton';
+import {MatrizButtonProps, MatrizesButton} from '../MatrizButton'
+
 import api from '../../service/api';
 
 type Props = {
-    handleGuildSelect: (proprietario: ProprietariosButtonProps) => void;
+    handleGuildSelect: (matriz: MatrizButtonProps) => void;
 }
 
-export function Proprietarios({handleGuildSelect} : Props){
-    const[proprietarios, setProprietarios] = useState<ProprietariosButtonProps[]>([]);
+
+export function Matriz({handleGuildSelect} : Props){
+    const[matriz, setMatriz] = useState<MatrizButtonProps[]>([]);
     useEffect (()=> {
         async function fetchDados() {
-          const {data} = await api.get('proprietarios');
-          setProprietarios(data);
+          const {data} = await api.get('matrizes');
+          setMatriz(data);
           console.log(data)
 
         }
@@ -22,13 +24,15 @@ export function Proprietarios({handleGuildSelect} : Props){
     return (
         <View style={styles.container}>
             <FlatList 
-            data={proprietarios}
+            data={matriz}
             style={styles.buttonModal}
             keyExtractor={item => item.id}
             renderItem={({item})=>(
-            <ProprietariosButton
-                id={item.id}
-                name={item.name}
+            <MatrizesButton
+            id={item.id}
+                identificacao={item.identificacao}
+                proprietarios={item.proprietarios}
+                dataNasciemento={item.dataNasciemento}
             onPress={() => handleGuildSelect(item)}
             />
             )}
