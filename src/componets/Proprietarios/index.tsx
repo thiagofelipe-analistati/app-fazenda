@@ -15,7 +15,6 @@ export function Proprietarios({handleGuildSelect} : Props){
           const {data} = await api.get('proprietarios');
           setProprietarios(data);
           console.log(data)
-
         }
         fetchDados();
       },[])

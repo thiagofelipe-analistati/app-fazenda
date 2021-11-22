@@ -12,6 +12,9 @@ export function Rebanho(): JSX.Element{
     function handleReprodutores (){
       navigation.navigate('Reprodutores');
   }
+  function handleBezerros (){
+    navigation.navigate('Bezerros');
+}
     return (
         <SafeAreaView style={styles.container}>
               <View style={styles.header}>
@@ -27,13 +30,13 @@ export function Rebanho(): JSX.Element{
                   <Text style={styles.textquantidade}>32</Text>
                 </View>
               </TouchableOpacity>
-              <View style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={handleBezerros}>
                 <Text style={styles.texttitle}> Novilhas </Text>
                 <View style={styles.alitext}>
                   <Text style={styles.textbody}>Quantidade</Text>
                   <Text style={styles.textquantidade}>32</Text>
                 </View>
-              </View>
+                </TouchableOpacity>
               <View style={styles.button}>
                 <Text style={styles.texttitle}> Bezerras </Text>
                 <View style={styles.alitext}>
