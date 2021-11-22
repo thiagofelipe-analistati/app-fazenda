@@ -9,16 +9,16 @@ import {NascidoButton, NascidosButtonProps} from '../../../componets/NascidosBut
 
 
 
-export function Bezzeros(): JSX.Element{
+export function Bezzeras(): JSX.Element{
   const[bezerros, setBezerros] = useState<NascidosButtonProps[]>([]);
   const [loading, setLoading] = useState(true);
     const navigation = useNavigation();
     function handleStart (){
-        navigation.navigate('Bezerros');
+        navigation.navigate('');
     }
     useEffect (()=> {
       async function fetchDados() {
-        const {data} = await api.get('bezerros');
+        const {data} = await api.get('bezerras');
         setBezerros(data);
         console.log(data);
         setLoading(false);
@@ -33,7 +33,7 @@ export function Bezzeros(): JSX.Element{
               <View style={styles.header}>
                 <Image source={BezerroPng} style={styles.rebanho} />
                 <Text style={styles.title}>
-                  Bezerros
+                  Bezerras
                 </Text>
               </View>
                 <FlatList 
@@ -43,8 +43,7 @@ export function Bezzeros(): JSX.Element{
                    <NascidoButton
                       dataNascimento={repository.dataNascimento}
                       identificacao={repository.identificacao}
-
-                      title="Bezerros" matrizes={{
+                      title="Bezerras" matrizes={{
                         key: 0,
                         identificacao: repository.matrizes.identificacao
                       }} 

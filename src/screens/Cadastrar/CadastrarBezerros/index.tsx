@@ -14,11 +14,10 @@ import VacaPng from '../../../assets/bezerro.png';
 import { Matriz } from '../../../componets/Matriz';
 import { MatrizButtonProps } from '../../../componets/MatrizButton';
 
-export function CadastrarNascimento(): JSX.Element{
+export function CadastrarBezerros(): JSX.Element{
     const navigation = useNavigation();
     const [identificacao, setIdentificacao] = useState("");
     const [dataNascimento, setDataNascimento] = useState("");
-    const [sexo, setSexo] = useState("");
     const [proprietario, setProprietario] = useState<ProprietariosButtonProps>({} as ProprietariosButtonProps);
     const [matriz, setMatriz] = useState<MatrizButtonProps>({} as MatrizButtonProps);
     const [opemModal, setOpemModal] = useState(false);
@@ -42,9 +41,9 @@ export function CadastrarNascimento(): JSX.Element{
     function handleStart (){
         navigation.navigate('Bezerros');
     }
-    
+  
       async function fetchDados() {
-        await api.post('nascidos', {
+        await api.post('bezerros', {
          "id": null,
          "dataNascimento": dataNascimento,
          "matrizes": {
@@ -57,7 +56,6 @@ export function CadastrarNascimento(): JSX.Element{
              "identificacao": matriz.identificacao
          },
          "identificacao": identificacao,
-         "sexo": sexo,
          "proprietario": {
              "id": proprietario.id,
              "name": proprietario.name
@@ -70,13 +68,12 @@ export function CadastrarNascimento(): JSX.Element{
          });
        }   
 
-      
     return (
         <SafeAreaView style={styles.container}>
               <View style={styles.header}>
                 <Image source={VacaPng} style={styles.rebanho} />
                 <Text style={styles.title}>
-                 Cadastrar Nascimento
+                 Cadastrar Bezerro
                 </Text>
               </View>
               <View style={styles.imputform}> 
@@ -87,15 +84,10 @@ export function CadastrarNascimento(): JSX.Element{
                   value={identificacao}
                   onChangeText={(text) => setIdentificacao(text)}
                 />
-                 <TextInput 
-                 style={[styles.imput, {marginBottom: 12}]}
-                  placeholder="Sexo"
-                  value={sexo}
-                  onChangeText={(text) => setSexo(text)}
-                />
                   <TextInput 
                  style={[styles.imput]}
                   placeholder="Data de nascimento dd/mm/aaaa"
+                  
                   onChangeText={(text) => setDataNascimento(text)}
                   value={dataNascimento}
                 />
@@ -115,7 +107,7 @@ export function CadastrarNascimento(): JSX.Element{
                </View>
                 <View style={styles.button}>
                   {
-                    dataNascimento === "" || identificacao === "" || proprietario.name == ""
+                    dataNascimento === "" || identificacao === "" || proprietario.name == "" || matriz.identificacao ===""
                     ?
                     <Button title="Confirma"  disabled={true}/>
                     :

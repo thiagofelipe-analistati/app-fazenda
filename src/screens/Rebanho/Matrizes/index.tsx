@@ -8,7 +8,7 @@ import { RebanhoButton } from '../../../componets/RebanhoButton';
 import {Load} from '../../../componets/Load'
 
 
-interface MatrizesProps {
+export interface MatrizesProps {
   key : number;
   dataNascimento : string;
     proprietarios : {
@@ -34,6 +34,8 @@ export function Matrizes(): JSX.Element{
       }
       fetchDados();
     },[])
+    useEffect (()=> {
+    },[])
     if(loading){
       return <Load />
     }
@@ -57,7 +59,6 @@ export function Matrizes(): JSX.Element{
                   />
                   )}
                   showsVerticalScrollIndicator={false}
-                
                 />   
         </View>
     );

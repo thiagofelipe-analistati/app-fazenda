@@ -11,8 +11,11 @@ export function Cadastrar(): JSX.Element{
     function handleReprodutores (){
       navigation.navigate('CadastrarReprodutor');
     }
-    function handleNascimenoto(){
-      navigation.navigate('CadastrarNascimento');
+    function handleBezerras(){
+      navigation.navigate('CadastrarBezerras');
+    }
+    function handleBezerros(){
+      navigation.navigate('CadastrarBezerros');
     }
     return (
         <SafeAreaView style={styles.container}>
@@ -24,8 +27,11 @@ export function Cadastrar(): JSX.Element{
               <TouchableOpacity style={styles.button} onPress={handleMatrizes}>
                 <Text style={styles.texttitle}> Matrizes </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.button} onPress={handleNascimenoto} >
-                <Text style={styles.texttitle}>Nascimento</Text>
+              <TouchableOpacity style={styles.button} onPress={handleBezerras} >
+                <Text style={styles.texttitle}>Bezerras</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button} onPress={handleBezerros} >
+                <Text style={styles.texttitle}>Bezerros</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.button} onPress={handleReprodutores}>
                 <Text style={styles.texttitle}> Reprodutores </Text>

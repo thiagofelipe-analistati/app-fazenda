@@ -14,20 +14,15 @@ import { RectButton, RectButtonProps} from  'react-native-gesture-handler'
     identificacao: string;
   }
   identificacao: string;
-  sexo: string;
   proprietario : {
     name : string;
   };
 }
 
-export function NascidoButton({identificacao,title, dataNascimento, proprietario, sexo, matrizes, ...rest}: NascidosButtonProps): JSX.Element{
+export function NascidoButton({identificacao,title, dataNascimento, proprietario, matrizes, ...rest}: NascidosButtonProps): JSX.Element{
     return (
         <RectButton style={styles.container} {...rest}>
           <Text style={styles.textid}>{identificacao}</Text>
-          <View style={styles.alinhar}>
-          <Text style={styles.texttitle}> Sexo </Text>
-          <Text style={styles.textPropritario}> {sexo} </Text>
-          </View>
           <View style={styles.alinhar}>
             <Text style={styles.texttitle} > Proprietário </Text>
             <Text style={styles.textPropritario} > {proprietario.name} </Text>

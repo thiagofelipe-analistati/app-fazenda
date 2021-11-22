@@ -9,10 +9,12 @@ import { Rebanho } from '../screens/Rebanho';
 import { Matrizes } from '../screens/Rebanho/Matrizes';
 import { Reprodutores } from '../screens/Rebanho/Reprodutores';
 import { CadastrarMatriz } from '../screens/Cadastrar/CadastrarMatriz';
-import { CadastrarNascimento } from '../screens/Cadastrar/CadastrarNascimento';
+import { CadastrarBezerras } from '../screens/Cadastrar/CadastrarBezerras';
 import { CadastrarReprodutor } from '../screens/Cadastrar/CadastrarReprodutor';
 import { Bezzeros } from '../screens/Rebanho/Bezerros';
-import { CadastrarBezerras } from '../screens/Cadastrar/CadastrarBezerras';
+import { Bezzeras } from '../screens/Rebanho/Bezerras';
+import { CadastrarBezerros } from '../screens/Cadastrar/CadastrarBezerros';
+
 const {Navigator, Screen} = createStackNavigator();
 
 export function AuthRoutes(){
@@ -46,20 +48,23 @@ export function AuthRoutes(){
            <Screen name="Bezerros"
             component={Bezzeros} 
           />
+          <Screen name="Bezerras"
+            component={Bezzeras} 
+          />
             <Screen name="Reprodutores"
             component={Reprodutores} 
           />
            <Screen name="CadastrarMatriz"
             component={CadastrarMatriz} 
           />
-          <Screen name="CadastrarNascimento"
-            component={CadastrarNascimento} 
+          <Screen name="CadastrarBezerras"
+            component={CadastrarBezerras} 
+          />
+          <Screen name="CadastrarBezerros"
+            component={CadastrarBezerros} 
           />
           <Screen name="CadastrarReprodutor"
             component={CadastrarReprodutor} 
-          />
-           <Screen name="CadastrarBezerras"
-            component={CadastrarBezerras} 
           />
       </Navigator>
     )

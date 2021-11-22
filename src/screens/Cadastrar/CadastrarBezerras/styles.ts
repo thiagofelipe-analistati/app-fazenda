@@ -36,13 +36,24 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal:20,
+        paddingHorizontal:30,
+        marginTop: 12
         
     },
+    contanierselect :{
+        flexDirection: 'row',
+        alignItems: "center",
+        marginRight: 30
+    },
+    contanierselect1 :{
+        flexDirection: 'row',
+        marginLeft: 30
+    },
     selectText:{
-        fontSize: 17,
+        fontSize: 16,
         color: colors.green,
-        marginLeft:65
+        alignItems: "center",
+        marginLeft: 60,
     },
     button :{
         width: '85%',
@@ -58,7 +69,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     rebanho:{
-        width: 110,
-        height: 87,
+        width: 120,
+        height: 90,
     }
 });

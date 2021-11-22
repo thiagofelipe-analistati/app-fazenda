@@ -7,7 +7,7 @@ import api from '../../../service/api';
 import { RebanhoButton } from '../../../componets/RebanhoButton';
 
 
-interface ReprodutorProps {
+export interface ReprodutorProps {
   key : number;
   dataNascimento : string;
     proprietarios : {
@@ -17,20 +17,17 @@ interface ReprodutorProps {
   identificacao : string;
 }
 export function Reprodutores(): JSX.Element{
-  const[matrizes, setMatrizes] = useState<ReprodutorProps[]>([]);
+  const[reprodutores, setReprodutores] = useState<ReprodutorProps[]>([]);
     const navigation = useNavigation();
     function handleStart (){
         navigation.navigate('');
     }
 
     useEffect (()=> {
-
       async function fetchDados() {
         const {data} = await api.get('reprodutores');
-        setMatrizes(data);
-        console.log(data);
+        setReprodutores(data);
       }
-
       fetchDados();
     },[])
 
@@ -43,7 +40,7 @@ export function Reprodutores(): JSX.Element{
                 </Text>
               </View>
                 <FlatList 
-                  data={matrizes}
+                  data={reprodutores}
                   style={styles.button}
                   renderItem={({item})=>(
                    <RebanhoButton 
