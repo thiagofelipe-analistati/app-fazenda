@@ -7,6 +7,7 @@ import RebanhoPng from '../../assets/rebanho.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons'; 
 import colors from '../../styles/colors';
+import { SomaTotal } from '../../componets/SomaTotal';
 export function Home (): JSX.Element{
     const navigation = useNavigation();
     function handleStart (){
@@ -38,20 +39,9 @@ export function Home (): JSX.Element{
             </View>
             <Text style={styles.fazenda}> Bem vindo a Fazenda São José </Text>
             <View style={styles.body}>
-                <TouchableOpacity 
-                        activeOpacity={0.7}
-                        onPress={handleRebanho}
-                        
-                    >
-                <View style={styles.bodyrebanho}> 
-                    <Image source={RebanhoPng} style={styles.rebanho} />
-                    <View style={styles.ali} >
-                        <Text style={styles.titlerebanho} > Rebanho </Text>
-                        <Text style={styles.titlerebanho}> 70 </Text>
-                    </View>
-                </View>
-                </TouchableOpacity>
+             <SomaTotal />
             </View>
+            
             <View style={styles.gestao}>
                 <TouchableOpacity 
                     activeOpacity={0.7}

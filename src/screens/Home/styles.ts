@@ -52,13 +52,6 @@ export const styles = StyleSheet.create({
         marginTop: 40,
         borderRadius: 20,
     },
-    bodyrebanho:{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 36,
-        paddingHorizontal:40,
-        alignItems: 'center'
-    },
     gestao: {
         width: '90%',
         height: 65,
@@ -72,15 +65,6 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 40,
         marginTop: 15
-    },
-    rebanho:{
-        width: 110,
-        height: 87,
-    },
-    titlerebanho: {
-        fontFamily: fonts.heading,
-        color: colors.green,
-        fontSize: 32
     },
     textbutton: {
         fontFamily: fonts.heading,
