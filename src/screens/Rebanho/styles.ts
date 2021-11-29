@@ -11,7 +11,6 @@ export const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginTop: getStatusBarHeight(),
     },
     header: {
         marginTop: 40,
@@ -55,5 +54,9 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         color : colors.body,
         fontSize: 13,
+    },
+    back: {
+        marginTop: getStatusBarHeight()+30,
+        marginRight: 300,
     }
 });

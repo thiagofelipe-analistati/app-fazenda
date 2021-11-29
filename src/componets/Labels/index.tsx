@@ -10,19 +10,19 @@ export function Labels(): JSX.Element{
     <View style={styles.container}>
       <View style={styles.ali}> 
         <View style={styles.matrizes}></View>
-        <Text>Matrizes</Text>
+        <Text style={styles.text}>Matrizes</Text>
       </View>
       <View style={styles.ali}> 
         <View style={styles.reprodutores}></View>
-        <Text>reprodutores</Text>
+        <Text style={styles.text}>reprodutores</Text>
       </View>
       <View style={styles.ali}> 
         <View style={styles.bezerros}></View>
-        <Text >Bezerros</Text>
+        <Text style={styles.text} >Bezerros</Text>
       </View>
       <View style={styles.ali}> 
         <View style={styles.bezerras}></View>
-        <Text >Bezerras</Text>
+        <Text style={styles.text}>Bezerras</Text>
       </View>
     </View>
   )

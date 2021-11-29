@@ -50,5 +50,9 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         color : colors.body,
         fontSize: 13,
+    },
+    back: {
+        marginTop: getStatusBarHeight()+30,
+        marginRight: 300,
     }
 });

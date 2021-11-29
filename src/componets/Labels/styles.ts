@@ -28,6 +28,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FF1752' 
     },
     ali : {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        
+    },
+    text:{
+        fontFamily : fonts.text,
+        fontSize: 15,
+        color: colors.body,
+        marginLeft: 8
     }
 });

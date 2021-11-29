@@ -8,6 +8,8 @@ import { Load } from '../../componets/Load';
 import api from '../../service/api';
 import { MatrizesProps } from './Matrizes';
 import { ReprodutorProps } from './Reprodutores';
+import { AntDesign } from '@expo/vector-icons'; 
+import colors from '../../styles/colors';
 
 export function Rebanho(): JSX.Element{
     const navigation = useNavigation();
@@ -16,7 +18,10 @@ export function Rebanho(): JSX.Element{
     const[matrizes, setMatrizes] = useState<MatrizesProps[]>([]);
     const[reprodutores, setReprodutores] = useState<ReprodutorProps[]>([]);
     const [loading, setLoading] = useState(true);
-        
+    
+    function handleback (){
+        navigation.navigate('Home');
+    }
     function handleMatrizes (){
         navigation.navigate('Matrizes');
     }
@@ -66,6 +71,11 @@ function handleBezerras (){
   }
     return (
         <SafeAreaView style={styles.container}>
+          <View style={styles.back}> 
+                <TouchableOpacity onPress={handleback}>
+                  <AntDesign name="arrowleft" size={24} color={colors.green} />
+                </TouchableOpacity>
+              </View>
               <View style={styles.header}>
                 <Image source={RebanhoPng} style={styles.rebanho} />
                 <Text style={styles.title}>

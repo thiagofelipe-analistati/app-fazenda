@@ -13,7 +13,7 @@ export function Financeiro (): JSX.Element{
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Text> Financeiro</Text>
+                <Text> Em fase de codificaçõa do backend</Text>
             </View>
             <View style={styles.resumo}>
             </View>

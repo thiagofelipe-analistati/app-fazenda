@@ -6,21 +6,22 @@ import { useNavigation } from '@react-navigation/core';
 import api from '../../../service/api';
 import {Load} from '../../../componets/Load'
 import {NascidoButton, NascidosButtonProps} from '../../../componets/NascidosButton';
-
+import { AntDesign } from '@expo/vector-icons'; 
+import colors from '../../../styles/colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export function Bezzeras(): JSX.Element{
   const[bezerros, setBezerros] = useState<NascidosButtonProps[]>([]);
   const [loading, setLoading] = useState(true);
-    const navigation = useNavigation();
-    function handleStart (){
-        navigation.navigate('');
+    const navigation = useNavigation();s
+    function handleback (){
+        navigation.navigate('Rebanho');
     }
     useEffect (()=> {
       async function fetchDados() {
         const {data} = await api.get('bezerras');
         setBezerros(data);
-        console.log(data);
         setLoading(false);
       }
       fetchDados();
@@ -30,6 +31,11 @@ export function Bezzeras(): JSX.Element{
     }
     return (
         <View style={styles.container}>
+              <View style={styles.back}> 
+                <TouchableOpacity onPress={handleback}>
+                  <AntDesign name="arrowleft" size={24} color={colors.green} />
+                </TouchableOpacity>
+              </View>
               <View style={styles.header}>
                 <Image source={BezerroPng} style={styles.rebanho} />
                 <Text style={styles.title}>
@@ -53,7 +59,6 @@ export function Bezzeras(): JSX.Element{
                       />
                   )}
                   showsVerticalScrollIndicator={false}
-                
                 />   
         </View>
     );

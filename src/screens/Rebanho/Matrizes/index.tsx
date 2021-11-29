@@ -6,7 +6,8 @@ import { useNavigation } from '@react-navigation/core';
 import api from '../../../service/api';
 import { RebanhoButton } from '../../../componets/RebanhoButton';
 import {Load} from '../../../componets/Load'
-
+import { AntDesign } from '@expo/vector-icons'; 
+import colors from '../../../styles/colors';
 
 export interface MatrizesProps {
   key : number;
@@ -22,8 +23,8 @@ export function Matrizes(): JSX.Element{
   const [loading, setLoading] = useState(true);
     const navigation = useNavigation();
 
-    function handleStart (){
-        navigation.navigate('');
+    function handleback(){
+        navigation.navigate('Rebanho');
     }
 
     useEffect (()=> {
@@ -41,6 +42,11 @@ export function Matrizes(): JSX.Element{
     }
     return (
         <View style={styles.container}>
+          <View style={styles.back}> 
+                <TouchableOpacity onPress={handleback}>
+                  <AntDesign name="arrowleft" size={24} color={colors.green} />
+                </TouchableOpacity>
+              </View>
               <View style={styles.header}>
                 <Image source={VacaPng} style={styles.rebanho} />
                 <Text style={styles.title}>

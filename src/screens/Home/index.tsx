@@ -10,7 +10,6 @@ import { SomaTotal } from '../../componets/SomaTotal';
 import { PieData } from '../../componets/PieData';
 import { Labels } from '../../componets/Labels';
 
-
 export function Home (): JSX.Element{
     const navigation = useNavigation();
     function handleStart (){
@@ -29,7 +28,7 @@ export function Home (): JSX.Element{
         loadStorageUserName();
     },[])
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.header}>
                 <View >
                     <Text style={styles.greeting}> Olá,</Text>
@@ -41,15 +40,15 @@ export function Home (): JSX.Element{
                 </View>
             </View>
             <Text style={styles.fazenda}> Bem vindo a Fazenda São José </Text>
-            <View style={styles.body}>
+            <TouchableOpacity style={styles.body} onPress={handleRebanho}>
                 <SomaTotal />
                 <View style={styles.flew}> 
                 <View style={styles.pie}> 
                     <PieData />
-                    </View>
+                </View>
                     <Labels />
               </View>
-            </View>
+            </TouchableOpacity>
             <View style={styles.gestao}>
                 <TouchableOpacity 
                     activeOpacity={0.7}
@@ -61,6 +60,6 @@ export function Home (): JSX.Element{
                 </TouchableOpacity>      
             </View>
 
-        </SafeAreaView>
+        </View>
     );
 }
