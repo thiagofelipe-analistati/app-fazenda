@@ -70,5 +70,16 @@ export const styles = StyleSheet.create({
         fontFamily: fonts.heading,
         color: colors.green,
         fontSize: 20
+    },
+    flew: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 36,
+        paddingHorizontal:25,
+        alignItems: 'center',
+    },
+    pie: {
+     width: 200,
+     marginRight: 20,
     }
 })
